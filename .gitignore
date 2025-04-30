@@ -22,7 +22,7 @@ __pycache__/
 *.log
 
 # Archivos generados por Render
-render.yaml
+# render.yaml
 
 # Archivos del sistema
 .DS_Store
