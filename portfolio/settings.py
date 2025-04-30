@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "fallback-secret-key")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['repositorio-lv.onrender.com']
+ALLOWED_HOSTS = ['repository-lv.onrender.com']
 
 
 
