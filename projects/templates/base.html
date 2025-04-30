@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Leandro Varela | Portfolio{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font estilo medieval -->
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <!-- "Cinzel" (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+
+    
+
+    <style>
+        body {
+        background: linear-gradient(to bottom, #1c1c1c, #000000);
+        color: #f0e6d2;
+        font-family: 'Segoe UI', sans-serif;
+        padding-top: 60px; 
+        }
+        body {
+            background-image: url('{% static "img/fondo_aoe4.png" %}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #f5f5dc;
+        }
+        /* Overlay opcional para oscurecer */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+        }
+        
+        .navbar {
+        background-color: #111;
+        border-bottom: 2px solid gold;
+        height: 70px;
+        }
+        .navbar-brand, .nav-link {
+        font-family: 'UnifrakturCook', cursive;
+        color: gold !important;
+        font-size: 1.2rem;
+        }
+        .nav-link:hover {
+        text-shadow: 0 0 5px gold;
+        }
+        footer {
+        border-top: 1px solid gold;
+        color: #aaa;
+        }
+        .navbar-nav .nav-link {
+        color: gold !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+        text-shadow: 0 0 4px gold;
+        }
+        @media (max-width: 991.98px) {
+            body {
+                padding-top: 60px; /* menor espacio en pantallas más pequeñas */
+            }
+            .navbar-collapse {
+                position: absolute;
+                top: 70px; /* altura de tu navbar */
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.85); /* fondo con opacidad */
+                z-index: 999;
+                padding: 1rem;
+                border-bottom: 2px solid gold;
+                border-top: 1px solid #333;
+            }
+            .navbar-toggler {
+                margin-top: -1.3em;
+            }
+            .titulo-epico {
+                font-size: 1.8rem;
+            }
+            .lead {
+                font-size: 1rem;
+            }
+            .navbar-brand img {
+                margin-top: -1em;
+                max-height: 80px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-collapse {
+                position: absolute;
+                top: 70px; /* altura de tu navbar */
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.85); /* fondo con opacidad */
+                z-index: 999;
+                padding: 1rem;
+                border-bottom: 2px solid gold;
+                border-top: 1px solid #333;
+            }
+            .navbar-toggler {
+                margin-top: -1.3em;
+            }
+            .titulo-epico {
+                font-size: 1.8rem;
+            }
+            .lead {
+                font-size: 1rem;
+            }
+            .navbar-brand img {
+                margin-top: -1em;
+                max-height: 80px;
+            }
+        }
+    </style>
+</head>
+<body >
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center" style="height: 100%;">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'img/escudoLogo.png' %}" alt="Logo"
+                        style="height: 90px; width: auto;"
+                        class="d-inline-block align-text-top">
+                </a>
+            </div>
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menú -->
+            
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'skills' %}">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'experience' %}">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="container my-5">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="text-center py-3">
+        &copy; {{ year }} Leandro Varela | Crafted with courage ⚔️
+    </footer>
+    <!-- Llamado al bootstrap5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Me | Leandro Varela{% endblock %}
+
+{% block content %}
+<style>
+    .subtitulo-epico {
+        font-family: 'Cinzel', serif;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        color: #c8b27e;
+        text-shadow: 1px 1px 2px #2a1f0f;
+    }
+
+    .retrato-epico {
+    padding: 14px;
+    border: 6px solid gold;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #1e1e1e 40%, #000 100%);
+    box-shadow:
+        0 0 25px rgba(255, 215, 0, 0.6),
+        0 0 10px #000 inset,
+        0 0 0 12px rgba(173, 153, 68, 0.3); /* como una segunda aureola dorada */
+    position: relative;
+    width: 260px;
+    height: 260px;
+    background-image: url('{% static "img/metal_texture.jpg" %}');
+    background-blend-mode: overlay;
+    background-size: cover;
+    }
+
+    .imagen-retrato {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+</style>
+<section class="container d-flex align-items-center justify-content-between flex-wrap py-5 ">
+    <div class="col-lg-6 col-12 text-light">
+        <p  class="subtitulo-epico">Bienvenido a mi mundo</p>
+        <h1 class="display-5 fw-bold mb-3">
+            Hola, soy <span class="text-warning">Leandro</span><br>
+            <span id="typed-text" class="text-light"></span>
+        </h1>
+            <p class="mb-4">Soy desarrollador backend apasionado por automatizar procesos y crear soluciones eficientes con tecnologías modernas como Django, FastAPI y Docker.</p>
+        <div class="d-flex gap-3">
+            <a href="{% url 'contact' %}" class="btn btn-warning text-dark fw-bold">Contáctame</a>
+            <a href="{% static 'cv/LeandroEmanuelVarela-formatoharvard.pdf' %}" download class="btn btn-outline-light fw-bold">
+                Descargar CV
+            </a>
+
+        </div>
+    </div>
+
+    <div class="col-lg-5 col-12 text-center mt-4 mt-lg-0">
+        <div class="retrato-epico">
+          <img src="{% static 'img/leandro-foto.png' %}" alt="Foto de Leandro" class="img-fluid imagen-retrato">
+          
+        </div>
+      </div>
+</section>
+
+<section class="container py-5 text-light border-top border-secondary">
+    <div class="row align-items-center">
+        <!-- Columna izquierda -->
+        <div class="col-md-7">
+        <p class="text-uppercase subtitulo-epico">Sobre mí</p>
+        <h2 class="fw-bold mb-3">Desarrollo <span class="text-warning">Web Profesional</span> para tu negocio</h2>
+        <p class="mb-4">
+            Me desenvuelvo como full stack enfocado en construir soluciones eficientes con tecnologías modernas.
+            Me apasiona la automatización, la experiencia de usuario y los resultados concretos.
+        </p>
+        <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Desarrollo Frontend</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Desarrollo Backend</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Aplicaciones Web Personalizadas</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Integración de APIs y Automatización</li>
+        </ul>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-md-5 mt-4 mt-md-0">
+        <div class="row g-3">
+            <div class="col-6">
+                <div class="text-white text-center p-4 fw-bold rounded position-relative overflow-hidden" style="
+                    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExejhzZ3FpOWt4d2p1ZXhpc2g2emh5ZGQ3ZmJrejJ2aWx3aWRxcW9hbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/70Y9czbgkLpfKJt5Hm/giphy.gif');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border: 2px solid gold;">
+                    <!-- overlay difuso -->
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="
+                        background-color: rgba(0, 0, 0, 0.3); 
+                        backdrop-filter: blur(2px);
+                        z-index: 1;
+                    "></div>
+
+                    <div style="position: relative; z-index: 2;">
+                        2<br>
+                        <small>Años de experiencia</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-6">
+                <div class="text-white text-center p-4 fw-bold rounded position-relative overflow-hidden"
+                        style="background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2JmanphaGIwNmp5dXk3enk2bG05azBpcjFlc21udml2NGtxMzF4MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ywnmleJ00AzG1D830d/giphy.gif');
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            border: 2px solid gold;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100"
+                        style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px); z-index: 1;">
+                    </div>
+                    <div style="position: relative; z-index: 2;">
+                    10+<br><small>Clientes felices</small>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="col-6">
+                <div class="text-white text-center p-4 fw-bold rounded position-relative overflow-hidden"
+                        style="background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExemt1aHVrcGZ3cnl2eWNsd2pmeHJ2ejZ1ODR4YnFrMW1ibjRzOWphZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gnFmGfFJGHHHhxTSei/giphy.gif');
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            border: 2px solid gold;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100"
+                        style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px); z-index: 1;">
+                    </div>
+                    <div style="position: relative; z-index: 2;">
+                    20+<br><small>Proyectos realizados</small>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="col-6">
+                <div class="text-white text-center p-4 fw-bold rounded position-relative overflow-hidden"
+                        style="background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmRqdzluNTI4MXE2aTdoZzJhMnVjdm1sbGwwdG1ieDRhdng5YXFjaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/msjEY7UVKBPn0PiOu2/giphy.gif');
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            border: 2px solid gold;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100"
+                        style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px); z-index: 1;">
+                    </div>
+                    <div style="position: relative; z-index: 2;">
+                    2+<br><small>Premios o reconocimientos</small>
+                    </div>
+                </div>
+                </div>
+                
+        </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new Typed("#typed-text", {
+            strings: [
+                    "Arquitecto de soluciones digitales",
+                    "Forjador de código backend y frontend",
+                    "Desarrollador Full Stack estratégico",
+                    "Constructor de plataformas web robustas",
+                    "Comandante del stack Django, JS y Docker",
+                    "Aliado de la automatización inteligente"
+                    ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true,
+        });
+    });
+</script>
+{% endblock %}

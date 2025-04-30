@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Inicio | Leandro Varela{% endblock %}
+
+
+{% block content %}
+
+
+<style>
+    .btn-epico {
+    position: relative;
+    overflow: hidden;
+    color: gold;
+    border: 2px solid gold;
+    background-color: black;
+    transition: all 0.4s ease-in-out;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    z-index: 0;
+}
+
+.btn-epico::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDk2MXhyNTIzZHdxdGxqN3B4cG0yaWRkaDdndjNlMjhvdGlpZjNvcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pXagPetNAzEtuMbuna/giphy.gif') center center / cover no-repeat;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.btn-epico::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+    transition: all 0.6s ease-in-out;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.btn-epico:hover::before {
+    opacity: 0.3;
+}
+
+.btn-epico:hover::after {
+    left: 100%;
+}
+
+.btn-epico:hover {
+    box-shadow: 0 0 12px gold;
+    color: black;
+    background-color: gold;
+    border-color: gold;
+}
+
+.btn-epico span {
+    position: relative;
+    z-index: 3;
+}
+
+/* Estilo y color para el titulo */
+.titulo-epico {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    background: linear-gradient(to top, #f1c973, #fff9e5, #fff2c6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+    1px 1px 1px #b4944e,
+    0 0 5px rgba(255, 236, 186, 0.4);
+}
+
+/* links de redes */
+.icono-epico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    padding: 1rem;
+    border: 2px solid gold;
+    border-radius: 10px;
+    background-color: rgba(17, 17, 17, 0.6);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: gold;
+}
+
+.icono-epico i {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.icono-epico span {
+    font-size: 1rem;
+}
+
+.icono-epico:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px gold;
+}
+
+.github:hover {
+    color: #f5f5dc;
+    background-color: rgba(40, 40, 40, 0.8);
+}
+
+.linkedin:hover {
+    color: #0077b5;
+    background-color: rgba(10, 10, 30, 0.7);
+}
+
+.gmail:hover {
+    color: #d93025;
+    background-color: rgba(50, 0, 0, 0.7);
+}
+
+    @media (max-width: 576px) {
+        .btn-epico{
+            margin-top: 10px;
+        }
+
+        .titulo-epico {
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            font-size: 2.2rem;
+            
+        }
+    }
+</style>
+
+
+<div class="text-center text-light" style="background-color: rgba(0, 0, 0, 0.5); padding: 3rem; border-radius: 10px;">
+    <h1 class="display-4 fw-bold titulo-epico" >Portfolio</h1>
+    <h1 class="display-4 fw-bold titulo-epico" >Leandro Emanuel Varela</h1>
+
+    <p class="lead fst-italic mb-4">Software Engineer | Backend Specialist | Django & Python Developer | Estratega Digital</p>
+
+    <p>
+        Así como un comandante dirige su ejército con precisión y estrategia,<br>
+        yo desarrollo aplicaciones web sólidas, escalables y eficientes.
+    </p>
+
+    <p class="mt-4">
+        🛠️ Tecnologías que domino: Python · Django · FastAPI · Docker · MySQL · Git<br>
+        📦 No solo desarrollo aplicaciones, creo herramientas pensadas para aportar valor desde la idea hasta la implementación.
+    </p>
+
+    <p class="mt-4">
+        Soy un Ingeniero en Software en Costa Rica, apasionado por la automatización de procesos, el desarrollo backend y la resolución de problemas complejos mediante soluciones modernas.
+    </p>
+
+    <p class="mt-4">
+        Ya sea para conquistar nuevos proyectos digitales o reforzar los sistemas existentes, estoy listo para la batalla. ⚔️
+    </p>
+
+    <div class="mt-5">
+        <a href="{% url 'projects' %}" class="btn btn-epico me-3"><span>Ver Proyectos</span></a>
+
+        <a href="{% url 'contact' %}" class="btn btn-epico me-3"><span>Contáctame</span></a>
+    </div>
+
+</div>
+
+
+
+
+<div class="container text-center mt-5">
+
+    <!-- Enlaces para redes sociales -->
+    <div class="mt-5 d-flex justify-content-center gap-4 redes-epicas">
+        <a href="https://github.com/leankdi20" target="_blank" class="icono-epico github">
+            <i class="bi bi-github"></i><span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/leandro-emanuel-varela-90b34b182" target="_blank" class="icono-epico linkedin">
+            <i class="bi bi-linkedin"></i><span>LinkedIn</span>
+        </a>
+        <a href="mailto:leanvarela6@gmail.com" class="icono-epico gmail">
+            <i class="bi bi-envelope-fill"></i><span>Email</span>
+        </a>
+    </div>
+
+
+    <hr class="my-4">
+    
+    
+    <p>
+        I'm a passionate software engineer from Costa Rica, focused on building scalable web applications and automating workflows. 
+        Skilled in Python, Django, FastAPI, and Docker.
+    </p>
+</div>
+{% endblock %}
