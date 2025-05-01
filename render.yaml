@@ -1,15 +1,11 @@
 services:
-  - type: web
-    name: django-app
-    env: python
-    buildCommand: |
-      pip install -r requirements.txt
-      python manage.py collectstatic --noinput
-    startCommand: gunicorn portfolio.wsgi:application
-    envVars:
-      - key: DEBUG
-        value: "False"
-      - key: SECRET_KEY
-        value: "django-insecure-3hj-)htw$s5!$8su9a5rw^+&9_7%yszijpb+ctf@299==1@s-5"
-      - key: ALLOWED_HOSTS
-        value: "localhost,127.0.0.1,.onrender.com"
+    - type: web
+        name: flask-portfolio
+        env: python
+        buildCommand: pip install -r requirements.txt
+        startCommand: gunicorn run:app
+        envVars:
+            - key: FLASK_ENV
+                value: production
+            - key: PORT
+                value: 10000

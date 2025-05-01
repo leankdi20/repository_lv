@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+
 {% block title %}About Me | Leandro Varela{% endblock %}
 
 {% block content %}
@@ -102,8 +102,8 @@
             {% endfor %}
             {% endif %}
             
-            <form method="POST" action="{% url 'contact' %}">
-            {% csrf_token %}
+            <form method="POST" action="{{ url_for('main.contact')}}">
+            
             
             <div class="mb-3">
                 <label class="form-label text-light">Nombre</label>
@@ -128,7 +128,9 @@
 
         <!-- ELEMENTO VISUAL -->
         <div class="col-md-6 text-center mt-4 mt-md-0">
-        <img src="{% static 'img/logoV.png' %}" alt="Escudo" class="img-fluid" style="max-height: 600px;">
+        
+            <img src="{{ url_for('static', filename='img/logoV.png') }}" alt="Escudo" class="img-fluid" style="max-height: 600px;">
+
         </div>
 
     </div>

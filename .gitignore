@@ -1,32 +1,27 @@
-# Entornos virtuales
+# Entorno virtual
 venv/
-env/
-ENV/
-.venv/
+.env
+*.env
 
-# Archivos compilados de Python
+# Archivos de Python compilados
 __pycache__/
 *.py[cod]
-*$py.class
 
-# Archivos de base de datos locales
+# Archivos de configuración y base de datos local
 *.sqlite3
 
-# Archivos de configuración de VSCode
-.vscode/
-
-# Archivos de entorno (si usás .env para variables secretas)
-.env
-
-# Archivos de log
+# Archivos de logs
 *.log
 
-# Archivos generados por Render
-# render.yaml
+# Archivos del editor
+.vscode/
+.idea/
 
 # Archivos del sistema
 .DS_Store
 Thumbs.db
 
-/staticfiles/
-staticfiles/
+# Archivos de despliegue opcionales
+*.bak
+*.swp
+*.swo

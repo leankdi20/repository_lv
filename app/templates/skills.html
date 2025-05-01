@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+
 {% block title %}Inicio | Leandro Varela{% endblock %}
 
 {% block content %}
@@ -118,7 +118,7 @@
             <p>
             Estas son algunas de las tecnologías con las que he trabajado, abarcando desde desarrollo frontend, backend, hasta soluciones completas multiplataforma.
             </p>
-            <a href="{% url 'projects' %}" class="btn btn-danger mt-3">Saber más</a>
+            <a href="{{ url_for('main.projects')}}" class="btn btn-danger mt-3">Saber más</a>
         </div>
 
         <div class="skills-grid">
@@ -322,7 +322,9 @@
                 <div class="skill-card">
                     <div class="card-inner">
                         <div class="card-front d-flex flex-column align-items-center justify-content-center">
-                            <img src="{% static 'img/maui.png' %}"
+                    
+
+                            <img ssrc="{{ url_for('static', filename='img/maui.png') }}"
                                 alt=".NET MAUI Logo"
                                 class="tamaño-card">
                             <p class="mt-2 text-light fw-bold">.Net Maui</p>
@@ -430,7 +432,7 @@
                 <div class="skill-card">
                     <div class="card-inner">
                         <div class="card-front d-flex flex-column align-items-center justify-content-center">
-                        <img src="{% static 'img/git_hub.png' %}" class="tamaño-card" alt="Github">
+                        <img src="{{ url_for('static', filename='img/git_hub.png') }}" class="tamaño-card" alt="Github">
                             <p class="mt-2 text-light fw-bold">Github</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">

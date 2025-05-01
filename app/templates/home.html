@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+
 {% block title %}Inicio | Leandro Varela{% endblock %}
 
 
@@ -164,9 +164,9 @@
     </p>
 
     <div class="mt-5">
-        <a href="{% url 'projects' %}" class="btn btn-epico me-3"><span>Ver Proyectos</span></a>
+        <a href="{{ url_for('main.projects')}}" class="btn btn-epico me-3"><span>Ver Proyectos</span></a>
 
-        <a href="{% url 'contact' %}" class="btn btn-epico me-3"><span>Contáctame</span></a>
+        <a href="{{ url_for('main.contact')}}" class="btn btn-epico me-3"><span>Contáctame</span></a>
     </div>
 
 </div>

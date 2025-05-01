@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+
 {% block title %}About Me | Leandro Varela{% endblock %}
 
 {% block content %}
@@ -25,7 +25,6 @@
     position: relative;
     width: 260px;
     height: 260px;
-    background-image: url('{% static "img/metal_texture.jpg" %}');
     background-blend-mode: overlay;
     background-size: cover;
     }
@@ -48,8 +47,8 @@
         </h1>
             <p class="mb-4">Soy desarrollador backend apasionado por automatizar procesos y crear soluciones eficientes con tecnologías modernas como Django, FastAPI y Docker.</p>
         <div class="d-flex gap-3">
-            <a href="{% url 'contact' %}" class="btn btn-warning text-dark fw-bold">Contáctame</a>
-            <a href="{% static 'cv/LeandroEmanuelVarela-formatoharvard.pdf' %}" download class="btn btn-outline-light fw-bold">
+            <a href="{{ url_for('main.contact')}}" class="btn btn-warning text-dark fw-bold">Contáctame</a>
+            <a href="{{ url_for('static', filename='cv/LeandroEmanuelVarela-formatoharvard.pdf') }}" target="_blank" download class="btn btn-outline-light fw-bold">
                 Descargar CV
             </a>
 
@@ -58,10 +57,12 @@
 
     <div class="col-lg-5 col-12 text-center mt-4 mt-lg-0">
         <div class="retrato-epico">
-          <img src="{% static 'img/leandro-foto.png' %}" alt="Foto de Leandro" class="img-fluid imagen-retrato">
-          
+        
+            <img src="{{ url_for('static', filename='img/leandro-foto.png') }}" alt="Foto de Leandro" class="img-fluid imagen-retrato">
+
+        
         </div>
-      </div>
+    </div>
 </section>
 
 <section class="container py-5 text-light border-top border-secondary">
