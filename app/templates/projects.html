@@ -3,5 +3,593 @@
 {% block title %}Inicio | Leandro Varela{% endblock %}
 
 {% block content %}
+<style>
+.aoe-header {
+    background: #1e1e2f url('/static/img/aoe4_background.jpg') center/cover no-repeat;
+    border-top: 3px solid #ffc107;
+    border-bottom: 3px solid #ffc107;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+    padding: 12px 0 20px 0;
+    position: relative;
+    z-index: 2;
+}
 
+.center-badge {
+    background-color: #1e1e2f;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    padding: 10px 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    z-index: 3;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+    height: auto;
+    min-width: 240px;
+
+}
+
+.resource, .stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    }
+.resource {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0 6px;       /* 🔥 separa horizontalmente cada ítem */
+    margin: 2px 4px;      /* 🔥 también podés usar sólo margin-right */
+               /* 🔥 entre ícono y número */
+    white-space: nowrap;
+}
+
+.player-info small {
+    font-size: 0.9rem;
+
+}
+
+.tamano-guerrero {
+    height: 30px;
+    width: auto;
+}
+.center-badge small {
+        font-size: 15px;
+        margin-left: -20px;
+        
+    }
+.center-badge h4 {
+        font-size: 20px;
+    }
+
+/* Espacio para tarjetas  */
+.aoe-card {
+    background: #1e1e2f;
+    border: 2px solid #ffc107;
+    border-radius: 12px;
+    padding: 16px 20px;
+    max-width: 350px;
+    color: #f1f1f1;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 12px auto;
+}
+
+.aoe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 18px rgba(255, 193, 7, 0.6);
+}
+
+.aoe-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.aoe-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.aoe-card h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #ffc107;
+    flex-grow: 1;
+}
+
+.tag {
+    background: #292b3a;
+    color: #ffc107;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.aoe-desc {
+    font-size: 0.9rem;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.aoe-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.aoe-tools span {
+    background-color: #2c2f42;
+    border: 1px solid #444;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.aoe-btn {
+    display: inline-block;
+    background: linear-gradient(145deg, #ffc107, #e6b800);
+    color: #1e1e2f;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.aoe-btn:hover {
+    background: linear-gradient(145deg, #ffcc33, #f4c300);
+}
+/* Espacio caroucel */
+.carousel-outer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  min-height: 520px;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 90vw;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.flip-card {
+  background: transparent;
+  width: 300px;
+  perspective: none;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.aoe-card {
+  width: 300px;
+  background: #1e1e2f;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.aoe-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.aoe-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.aoe-card h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #ffc107;
+  flex-grow: 1;
+}
+
+.tag {
+  background: #292b3a;
+  color: #ffc107;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.aoe-desc {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.aoe-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.aoe-tools span {
+  background-color: #2c2f42;
+  border: 1px solid #444;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.aoe-btn {
+  display: inline-block;
+  background: linear-gradient(145deg, #ffc107, #e6b800);
+  color: #1e1e2f;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.aoe-btn:hover {
+  background: linear-gradient(145deg, #ffcc33, #f4c300);
+}
+
+.demo-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.carousel-btn {
+  background-color: #ffc107;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 0 8px #0005;
+}
+.aoe-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  
+}
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+    .center-badge {
+        padding: 6px 10px;
+        font-size: 11px;
+        position: static !important; /* 👈 hace que el badge ya no tape nada */
+        transform: none !important;
+        margin-top: -30px;
+    }
+
+    .center-badge h4 {
+        font-size: 14px;
+        margin: 4px 0;
+    }
+
+    .tamano-guerrero {
+        height: 18px;
+    }
+
+    .center-badge small,
+    .center-badge span {
+        font-size: 10px;
+    }
+
+    .resource,
+    .stat {
+        font-size: 8px;
+        
+        padding: 0; /* 🔥 elimina cualquier padding interno */
+        gap: 2px; /* 🔥 reduce espacio entre ícono y número */
+        display: flex;
+        align-items: center;
+        
+        
+    }
+    .stats {
+        flex: 0 0 100%; /* cada uno ocupa el 100% del ancho del contenedor */
+        justify-content: center;
+        margin: 0;           /* 🔥 sin margen arriba/abajo */
+        padding: 0;          /* 🔥 sin padding */
+        line-height: 1.1;    /* 🔽 reduce altura vertical */
+        font-size: 8px;
+    }
+    .resource-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100px;
+        margin-top: -70px;
+        margin-left: -40px;
+        }
+    .resource-wrap_stats{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100px;
+        margin-top: -70px;
+        margin-left: 40px;
+        gap: 0px;
+        }
+    .resource {
+        flex: 0 0 45%; /* ✅ 2 elementos por fila */
+        justify-content: center;
+        margin: 2px 0;
+        white-space: nowrap;
+    }
+    .aoe-header {
+        height: 50px;
+        padding: 10px 0 16px 0;
+        margin-top: 0 !important;
+    }
+    .linea {
+        margin-left: -40px;
+    }
+    /* Tarjeta */
+    .carousel-outer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        min-height: 320px;
+    }
+    .carousel-track {
+        gap: 10px;
+    }
+    .flip-card {
+    width: 240px;
+    }
+    .aoe-card {
+        width: 240px;
+        padding: 14px;
+    }
+    .aoe-card-header h3 {
+        font-size: 1rem;
+    }
+    .aoe-card-header span {
+        font-size: 10px;
+    }
+    .aoe-tools span {
+        font-size: 0.7rem;
+    }
+    .aoe-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    .aoe-title-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    }
+}
+</style>
+
+<div class="aoe-header container-fluid text-light mb-4">
+    <!-- Cuadro centrado dentro del flujo -->
+    <div class="d-flex justify-content-center">
+        <div class="center-badge">
+            <small>
+                Stack Rank | 
+                <img src="{{ url_for('static', filename='img/guerrero_elite.png') }}" class="tamano-guerrero" alt=""> | 
+                <span class="text-warning">Elite</span>
+            </small>
+        
+            <h4 class="fw-bold mb-1">Leandro | Developer II 🛠️</h4>
+        
+            <small>
+                Projects: 9 | 
+                <img src="{{ url_for('static', filename='img/icon_guerrero.png') }}" class="tamano-guerrero" alt=""> | 
+                15 Git Repos
+            </small>
+        </div>
+    </div>
+
+    <!-- Línea inferior -->
+    <div class="row align-items-center justify-content-between text-center mt-3">
+        <div class="col-4 d-flex flex-column align-items-center justify-content-start">
+            <div class="d-flex gap-0 flex-wrap justify-content-center resource-wrap">
+                <div class="resource">🥩 12</div>
+                <div class="resource">🌲 8</div>
+                <div class="resource">🪙 5</div>
+                <div class="resource">🪨 9</div>
+            </div>
+        </div>
+
+        <div class="col-4"></div>
+
+        <!-- Derecha: Stats -->
+        <div class="col-4 d-flex flex-column align-items-center justify-content-start">
+            <div class="d-flex gap-3 flex-wrap justify-content-center resource-wrap_stats">
+            <div class="stat">👥 Fullstack</div>
+            <div class="stat">🕒 2+ Years</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contenedor principal corregido -->
+<div class="carousel-outer">
+    <!-- Botones de navegación -->
+    <button class="carousel-btn left" onclick="moveCarousel(-1)">⬅️</button>
+    <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+    
+            <!-- Tarjeta 1 -->
+            <div class="flip-card">
+                <div class="aoe-card">
+                <div class="aoe-card-header">
+                    <img src="{{ url_for('static', filename='img/yelmo_icon.png')}}" alt="Proyecto ícono" class="aoe-icon">
+                    <div class="aoe-title-wrap">
+                        <h3>Forwarding_CR</h3>
+                        <span class="tag">🏰 Centro Urbano (WebApp)</span>
+                    </div>
+                </div>
+                <p class="aoe-desc">Cotizaciones internacionales terrestre/aéreo.</p>
+
+                <img src="{{ url_for('static', filename='img/fwcr_img.png')}}" alt="Demo Forwarding_CR" class="demo-img">
+                <div class="aoe-tools">
+                    <span>⚙️ Django</span>
+                    <span>🐳 Docker</span>
+                    <span>🌐 Swager</span>
+                    <span>🎨 ApiRest</span>
+                </div>
+                <a href="https://github.com/leankdi20/Forwarding_CR" class="aoe-btn" target="_blank">Ver en GitHub ⚔️</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="flip-card">
+                <div class="aoe-card">
+                <div class="aoe-card-header">
+                    <img src="{{ url_for('static', filename='img/mongol_icon.png')}}" alt="Proyecto ícono" class="aoe-icon">
+                    <div class="aoe-title-wrap">
+                        <h3>Api Forwarding CR</h3>
+                        <span class="tag">🛠️ Taller (API backend)</span>
+                    </div>
+                </div>
+                <p class="aoe-desc">
+                    Backend con Django REST para cotizaciones internacionales. Administra datos estructurados vía API, usando MySQL y Docker.
+                </p>
+                <img src="{{ url_for('static', filename='img/api_fwcr_img.png')}}" alt="Demo Forwarding_CR" class="demo-img">
+                <div class="aoe-tools">
+                    <span>⚙️ Django</span>
+                    <span>🛢️ MySQL</span>
+                    <span>🐳 Docker</span>
+                    <span>🌐 Swager</span>
+                    <span>🎨 ApiRest</span>
+                
+                </div>
+                <a href="https://github.com/leankdi20/api_forwardingcr" class="aoe-btn" target="_blank">Ver en GitHub ⚔️</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="flip-card">
+                <div class="aoe-card">
+                <div class="aoe-card-header">
+                    <img src="{{ url_for('static', filename='img/caballero_caballo_icon.png')}}" alt="Proyecto ícono" class="aoe-icon">
+                    <div class="aoe-title-wrap">
+                        <h3>Api Orden de Pago</h3>
+                        <span class="tag">💰 Mercado (Pagos)</span>
+                    </div>
+                </div>
+                <p class="aoe-desc">API REST para gestionar órdenes de pago, implementada en Django y preparada para entorno Docker.</p>
+                <img src="{{ url_for('static', filename='img/orden_pago_img.png')}}" alt="Demo Forwarding_CR" class="demo-img">
+                <div class="aoe-tools">
+                    <span>⚙️ Django</span>
+                    <span>🛢️ MySQL</span>
+                    <span>🐳 Docker</span>
+                    <span>🌐 Swager</span>
+                    <span>🎨 ApiRest</span>
+                </div>
+                <a href="https://github.com/leankdi20/api_orden_pago" class="aoe-btn" target="_blank">Ver en GitHub ⚔️</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="flip-card">
+                <div class="aoe-card">
+                    <div class="aoe-card-header">
+                        <img src="{{ url_for('static', filename='img/arquero_icon.png')}}" alt="Proyecto ícono" class="aoe-icon">
+                        <div class="aoe-title-wrap">
+                            <h3>Api OTQ HP</h3>
+                            <span class="tag">🧾 Contrato del suministros HP</span>
+                        </div>
+                    </div>
+                    <p class="aoe-desc">
+                        API para gestionar contratos de suministro HP tipo OkToQuote con creación y consulta automatizada.
+                    </p>
+                    <img src="{{ url_for('static', filename='img/api_otq_hp.png')}}" alt="Demo Forwarding_CR" class="demo-img">
+                    <div class="aoe-tools">
+                        <span>⚙️ Django</span>
+                        <span>🛢️ MySQL</span>
+                        <span>🐳 Docker</span>
+                        <span>🌐 Swager</span>
+                        <span>🎨 ApiRest</span>
+                    </div>
+                    <!-- <a href="https://github.com/leankdi20/Forwarding_CR" class="aoe-btn" target="_blank">Ver en GitHub ⚔️</a> -->
+                </div>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="flip-card">
+                <div class="aoe-card">
+                    <div class="aoe-card-header">
+                        <img src="{{ url_for('static', filename='img/ballestero_icon.png')}}" alt="Proyecto ícono" class="aoe-icon">
+                        <div class="aoe-title-wrap">
+                            <h3>Pokedex</h3>
+                            <span class="tag">🎯 Campo de Entrenamiento</span>
+                        </div>
+                    </div>
+                    <p class="aoe-desc">
+                        Aplicación tipo Pokédex que consume datos de una API externa utilizando Requests para mostrar información dinámica de Pokémon.
+                    </p>
+                    <img src="{{ url_for('static', filename='img/pokedex.png')}}" alt="Demo Forwarding_CR" class="demo-img">
+                    <div class="aoe-tools">
+                        <span>⚙️ Django</span>
+                        <span>🐳 Requests</span>
+                        <span>🌐 HTML</span>
+                        <span>🎨 Bootstrap</span>
+                    </div>  
+                    <a href="https://github.com/leankdi20/PokeDex" class="aoe-btn" target="_blank">Ver en GitHub ⚔️</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button class="carousel-btn right" onclick="moveCarousel(1)">➡️</button>
+</div>
+
+
+
+<!-- Script para movimiento -->
+<script>
+let currentIndex = 0;
+function moveCarousel(direction) {
+    const track = document.getElementById("carouselTrack");
+    const cards = track.querySelectorAll(".flip-card");
+    const total = cards.length;
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex >= total) currentIndex = total - 1;
+    const cardWidth = cards[0].offsetWidth;
+    const scrollPosition = cardWidth * currentIndex;
+    track.style.transform = `translateX(-${scrollPosition}px)`;
+}
+</script>
+    
 {% endblock %}
