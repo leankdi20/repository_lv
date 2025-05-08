@@ -79,6 +79,14 @@
 }
 
 /* links de redes */
+.redes-epicas {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
 .icono-epico {
     display: flex;
     flex-direction: column;
@@ -86,7 +94,7 @@
     text-decoration: none;
     font-family: 'Cinzel', serif;
     font-weight: bold;
-    padding: 1rem;
+    padding: 8px;
     border: 2px solid gold;
     border-radius: 10px;
     background-color: rgba(17, 17, 17, 0.6);
@@ -96,12 +104,12 @@
 }
 
 .icono-epico i {
-    font-size: 2.5rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .icono-epico span {
-    font-size: 1rem;
+    font-size: 9px;
 }
 
 .icono-epico:hover {
@@ -135,49 +143,39 @@
             font-size: 2.2rem;
             
         }
+        .redes-epicas {
+        position: static;
+        margin-bottom: 1rem;
+        justify-content: center;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .icono-epico {
+        flex-direction: column;
+        padding: 6px;
+        font-size: 0.7rem;
+    }
+
+    .icono-epico i {
+        font-size: 1rem;
+    }
+
+    .icono-epico span {
+        font-size: 8px;
+    }
+
+    .titulo-epico {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
     }
 </style>
 
 
-<div class="text-center text-light" style="background-color: rgba(0, 0, 0, 0.5); padding: 3rem; border-radius: 10px;">
-    <h1 class="display-4 fw-bold titulo-epico" >Portfolio</h1>
-    <h1 class="display-4 fw-bold titulo-epico" >Leandro Emanuel Varela</h1>
-
-    <p class="lead fst-italic mb-4">Software Engineer | Backend Specialist | Django & Python Developer | Estratega Digital</p>
-
-    <p>
-        Así como un comandante dirige su ejército con precisión y estrategia,<br>
-        yo desarrollo aplicaciones web sólidas, escalables y eficientes.
-    </p>
-
-    <p class="mt-4">
-        🛠️ Tecnologías que domino: Python · Django · FastAPI · Docker · MySQL · Git<br>
-        📦 No solo desarrollo aplicaciones, creo herramientas pensadas para aportar valor desde la idea hasta la implementación.
-    </p>
-
-    <p class="mt-4">
-        Soy un Ingeniero en Software en Costa Rica, apasionado por la automatización de procesos, el desarrollo backend y la resolución de problemas complejos mediante soluciones modernas.
-    </p>
-
-    <p class="mt-4">
-        Ya sea para conquistar nuevos proyectos digitales o reforzar los sistemas existentes, estoy listo para la batalla. ⚔️
-    </p>
-
-    <div class="mt-5">
-        <a href="{{ url_for('main.projects')}}" class="btn btn-epico me-3"><span>Ver Proyectos</span></a>
-
-        <a href="{{ url_for('main.contact')}}" class="btn btn-epico me-3"><span>Contáctame</span></a>
-    </div>
-
-</div>
-
-
-
-
-<div class="container text-center mt-5">
-
+<div class="hero-section text-center text-light position-relative" style="background-color: rgba(0, 0, 0, 0.5); padding: 3rem; border-radius: 10px;">
     <!-- Enlaces para redes sociales -->
-    <div class="mt-5 d-flex justify-content-center gap-4 redes-epicas">
+    <div class="redes-epicas">
         <a href="https://github.com/leankdi20" target="_blank" class="icono-epico github">
             <i class="bi bi-github"></i><span>GitHub</span>
         </a>
@@ -189,13 +187,48 @@
         </a>
     </div>
 
+    <h1 class="display-4 fw-bold titulo-epico" >Portfolio</h1>
+    <h1 class="display-4 fw-bold titulo-epico" >Leandro Emanuel Varela</h1>
 
-    <hr class="my-4">
-    
-    
+    <p class="lead fst-italic mb-4">Software Engineer | Backend Specialist | Django & Python Developer | Estratega Digital</p>
+
     <p>
-        I'm a passionate software engineer from Costa Rica, focused on building scalable web applications and automating workflows. 
-        Skilled in Python, Django, FastAPI, and Docker.
+        Just as a commander leads his army with precision and strategy,<br>
+        I develop robust, scalable and efficient web applications.
+    </p>
+
+    <p class="mt-4">
+        
+        <img src="{{ url_for('static', filename='img/img_herreria.png')}}" alt="Img Herreria" style="width: 40px; height: 40px;"> Technologies I master: Python - Django - Flask - FastAPI - Docker - MySQL - Github<br>
+        <img src="{{ url_for('static', filename='img/img_food.png')}}" alt="Img Caja Comida" style="width: 40px; height: 40px;"> I don't just develop applications, I create tools designed to provide value from the idea to the implementation.
+    </p>
+
+    <p class="mt-4">
+        I am a Software Engineer in Costa Rica, working in process automation, backend development and solving complex problems through modern solutions.
+    </p>
+
+    <p class="mt-4">
+        Whether it's conquering new digital projects or reinforcing existing systems, I'm ready for battle.<img src="{{ url_for('static', filename='img/img_two_swords.png')}}" alt="Img dos espadas" style="width: 40px; height: 40px;">
+    </p>
+
+    <div class="mt-5">
+        <a href="{{ url_for('main.projects')}}" class="btn btn-epico me-3"><span>Ver Proyectos</span></a>
+
+        <a href="{{ url_for('main.contact')}}" class="btn btn-epico me-3"><span>Contáctame</span></a>
+        
+    
+    </div>
+
+</div>
+
+
+
+
+<div class="container text-center mt-5">
+    <hr class="my-4" >
+
+    <p>
+        I architect digital strongholds with precision—each line of code is designed to optimize performance, reinforce systems, and empower users. My mission: turn complexity into clarity through clean, strategic engineering.
     </p>
 </div>
 {% endblock %}

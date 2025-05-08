@@ -309,7 +309,7 @@
   font-weight: bold;
   color: gold;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.6rem;
   padding: 15px;
   border: 1px solid gold;
 }
@@ -339,7 +339,7 @@
   background-color: #2b2b3d;
   border: 1px solid #888;
   border-radius: 8px;
-  font-size: 0.85rem;
+  font-size: 0.7rem;
 }
 
 .aoe-title {
@@ -374,6 +374,9 @@
 /* Ocultar columnas menos la primera */
 .aoe-col.collapsible.hidden {
   display: none;
+}
+.aoe-col p{
+    font-size: 0.8rem;
 }
 
 /* Mostrar solo tabla en pantallas grandes */
@@ -511,7 +514,7 @@
                 <span class="text-warning">Elite</span>
             </small>
         
-            <h4 class="fw-bold mb-1">Leandro | Developer II 🛠️</h4>
+            <h4 class="fw-bold mb-1">Leandro | Developer II <img src="{{ url_for('static', filename='img/img_herreria.png') }}" class="tamano-guerrero" alt=""></h4>
         
             <small>
                 Projects: 9 | 
@@ -681,10 +684,10 @@
 <!-- AOE4 Themed Projects Table -->
 <div class="aoe-projects-table">
     <div class="aoe-table-header">
-        <div class="aoe-col"><h6>I Proyecto</h6></div>
-        <div class="aoe-col"><h6>II Tecnologías</h6></div>
-        <div class="aoe-col"><h6>III Descripción</h6></div>
-        <div class="aoe-col"><h6>IV Captura</h6></div>
+        <div class="aoe-col"><h6>I Project</h6></div>
+        <div class="aoe-col"><h6>II Technology</h6></div>
+        <div class="aoe-col"><h6>III Description</h6></div>
+        <div class="aoe-col"><h6>IV Capture</h6></div>
     </div>
 
     <!-- Fila 1 -->
@@ -701,7 +704,7 @@
             <span>🎨 Linode Server</span>
             </div>
         </div>
-        <div class="aoe-col collapsible">Cotizaciones internacionales terrestre/aéreo para clientes globales.</div>
+        <div class="aoe-col collapsible"><p>Cotizaciones internacionales terrestre/aéreo para clientes globales.</p></div>
         <div class="aoe-col collapsible"><img class="aoe-preview" src="/static/img/fwcr_img.png" alt="Forwarding_CR">
             <a href="https://github.com/leankdi20/Forwarding_CR" target="_blank" class="aoe-link">GitHub ⚔️</a></div>
         
@@ -721,7 +724,7 @@
                 <span>🎨 ApiRest</span>
             </div>
         </div>
-        <div class="aoe-col collapsible">Backend con Django REST para cotizaciones internacionales. Administra datos estructurados vía API, usando MySQL y Docker.</div>
+        <div class="aoe-col collapsible"><p>Backend con Django REST para cotizaciones internacionales. Administra datos estructurados vía API, usando MySQL y Docker.</p></div>
         <div class="aoe-col collapsible"><img class="aoe-preview" src="{{ url_for('static', filename='img/api_fwcr_img.png')}}" alt="Forwarding_CR">
             <a href="https://github.com/leankdi20/api_forwardingcr" target="_blank" class="aoe-link">GitHub ⚔️</a></div>
         
@@ -741,7 +744,7 @@
                 <span>🎨 ApiRest</span>
             </div>
         </div>
-        <div class="aoe-col collapsible">API REST para gestionar órdenes de pago, implementada en Django y preparada para entorno Docker.</div>
+        <div class="aoe-col collapsible"><p>API REST para gestionar órdenes de pago, implementada en Django y preparada para entorno Docker.</p></div>
         <div class="aoe-col collapsible"><img class="aoe-preview" src="{{ url_for('static', filename='img/orden_pago_img.png')}}" alt="Forwarding_CR">
             <a href="https://github.com/leankdi20/api_orden_pago" target="_blank" class="aoe-link">GitHub ⚔️</a></div>
         
@@ -761,7 +764,7 @@
                 <span>🎨 ApiRest</span>
             </div>
         </div>
-        <div class="aoe-col collapsible">API para gestionar contratos de suministro HP tipo OkToQuote con creación y consulta automatizada.</div>
+        <div class="aoe-col collapsible"><p>API para gestionar contratos de suministro HP tipo OkToQuote con creación y consulta automatizada.</p></div>
         <div class="aoe-col collapsible"><img class="aoe-preview" src="{{ url_for('static', filename='img/api_otq_hp.png')}}" alt="Forwarding_CR">
             <!-- <a href="https://github.com/leankdi20/api_orden_pago" target="_blank" class="aoe-link">GitHub ⚔️</a> --></div>
         
@@ -780,7 +783,7 @@
                 <span>🎨 Bootstrap</span>
             </div>  
         </div>
-        <div class="aoe-col collapsible">Aplicación tipo Pokédex que consume datos de una API externa utilizando Requests para mostrar información dinámica de Pokémon.</div>
+        <div class="aoe-col collapsible"><p>Aplicación tipo Pokédex que consume datos de una API externa utilizando Requests para mostrar información dinámica de Pokémon.</p></div>
         <div class="aoe-col collapsible"><img class="aoe-preview" src="{{ url_for('static', filename='img/pokedex.png')}}" alt="Forwarding_CR">
             <a href="https://github.com/leankdi20/PokeDex" target="_blank" class="aoe-link">GitHub ⚔️</a></div>
         

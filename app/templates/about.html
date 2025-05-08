@@ -40,16 +40,16 @@
 </style>
 <section class="container d-flex align-items-center justify-content-between flex-wrap py-5 ">
     <div class="col-lg-6 col-12 text-light">
-        <p  class="subtitulo-epico">Bienvenido a mi mundo</p>
+        <p  class="subtitulo-epico">Welcome to my world</p>
         <h1 class="display-5 fw-bold mb-3">
-            Hola, soy <span class="text-warning">Leandro</span><br>
+            Hi, I am <span class="text-warning">Leandro</span><br>
             <span id="typed-text" class="text-light"></span>
         </h1>
-            <p class="mb-4">Soy desarrollador backend apasionado por automatizar procesos y crear soluciones eficientes con tecnologías modernas como Django, FastAPI y Docker.</p>
+            <p class="mb-4">I am a backend developer passionate about automating processes and creating efficient solutions with modern technologies such as Django, FastAPI and Docker.</p>
         <div class="d-flex gap-3">
             <a href="{{ url_for('main.contact')}}" class="btn btn-warning text-dark fw-bold">Contáctame</a>
             <a href="{{ url_for('static', filename='cv/LeandroEmanuelVarela-formatoharvard.pdf') }}" target="_blank" download class="btn btn-outline-light fw-bold">
-                Descargar CV
+                Download CV
             </a>
 
         </div>
@@ -69,17 +69,17 @@
     <div class="row align-items-center">
         <!-- Columna izquierda -->
         <div class="col-md-7">
-        <p class="text-uppercase subtitulo-epico">Sobre mí</p>
-        <h2 class="fw-bold mb-3">Desarrollo <span class="text-warning">Web Profesional</span> para tu negocio</h2>
+        <p class="text-uppercase subtitulo-epico">About me</p>
+        <h2 class="fw-bold mb-3">Professional Web <span class="text-warning">Developer</span> for your business</h2>
         <p class="mb-4">
-            Me desenvuelvo como full stack enfocado en construir soluciones eficientes con tecnologías modernas.
-            Me apasiona la automatización, la experiencia de usuario y los resultados concretos.
+            I work as a full stack focused on building efficient solutions with modern technologies.
+            I am passionate about automation, user experience and concrete results.
         </p>
         <ul class="list-unstyled">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Desarrollo Frontend</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Desarrollo Backend</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Aplicaciones Web Personalizadas</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Integración de APIs y Automatización</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Frontend Development</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Backend Development</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Custom Web Applications</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> API Integration and Automation</li>
         </ul>
         </div>
 
@@ -102,7 +102,7 @@
 
                     <div style="position: relative; z-index: 2;">
                         2<br>
-                        <small>Años de experiencia</small>
+                        <small>Years of experience</small>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                         style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px); z-index: 1;">
                     </div>
                     <div style="position: relative; z-index: 2;">
-                    10+<br><small>Clientes felices</small>
+                    10+<br><small>Happy customers</small>
                     </div>
                 </div>
                 </div>
@@ -134,7 +134,7 @@
                         style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px); z-index: 1;">
                     </div>
                     <div style="position: relative; z-index: 2;">
-                    20+<br><small>Proyectos realizados</small>
+                    10+<br><small>Projects completed</small>
                     </div>
                 </div>
                 </div>
@@ -150,7 +150,7 @@
                         style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px); z-index: 1;">
                     </div>
                     <div style="position: relative; z-index: 2;">
-                    2+<br><small>Premios o reconocimientos</small>
+                    2+<br><small>Awards or recognitions</small>
                     </div>
                 </div>
                 </div>
@@ -165,13 +165,13 @@
     document.addEventListener("DOMContentLoaded", function () {
         new Typed("#typed-text", {
             strings: [
-                    "Arquitecto de soluciones digitales",
-                    "Forjador de código backend y frontend",
-                    "Desarrollador Full Stack estratégico",
-                    "Constructor de plataformas web robustas",
-                    "Comandante del stack Django, JS y Docker",
-                    "Aliado de la automatización inteligente"
-                    ],
+                "Architect of digital solutions",
+                "Forge master of backend and frontend code",
+                "Strategic Full Stack Developer",
+                "Builder of robust web platforms",
+                "Commander of the Django, JS, and Docker stack",
+                "Ally of intelligent automation"
+            ],
             typeSpeed: 60,
             backSpeed: 40,
             loop: true,

@@ -49,7 +49,30 @@
     align-items: center;
     justify-content: center;
     font-size: 0.85rem;
+    box-sizing: border-box;
     }
+    .card-back p,
+    .tamaño-text {
+    max-height: 100%;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+    padding: 0.5rem;
+    line-height: 1.3;
+    font-size: 0.9rem;
+    white-space: normal;
+    word-break: break-word;
+    }
+    .tamaño-text {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        padding: 0.5rem;
+        overflow: hidden;           /* Evita el scroll */
+        text-overflow: ellipsis;    /* Si querés cortar con puntos suspensivos */
+        display: -webkit-box;
+        /* Cantidad de líneas visibles */
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        }
 
     .tamaño-card{
     width: 50px;
@@ -106,6 +129,27 @@
     width: 30px;
     height: 30px;
     }
+    .card-back p,
+    .tamaño-text {
+    max-height: 100%;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+    padding: 0.5rem;
+    line-height: 1.3;
+    font-size: 0.9rem;
+    white-space: normal;
+    word-break: break-word;
+    }
+    .tamaño-text {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        padding: 0.5rem;
+        overflow: hidden;           /* Evita el scroll */
+        text-overflow: ellipsis;    /* Si querés cortar con puntos suspensivos */
+        display: -webkit-box;     /* Cantidad de líneas visibles */
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        }
     }
 </style>
 
@@ -113,10 +157,10 @@
     <div class="d-flex flex-column flex-lg-row align-items-start justify-content-center gap-5">
         <!-- Texto explicativo -->
         <div class="skills-text text-light medieval-title">
-            <h5 class="text-warning">Mis Habilidades</h5>
-            <h2 class="text-warning medieval-title">Explorá mis Skills y Experiencia</h2>
+            <h5 class="text-warning">My Skills</h5>
+            <h2 class="text-warning medieval-title">Explore my Skills and Experience</h2>
             <p>
-            Estas son algunas de las tecnologías con las que he trabajado, abarcando desde desarrollo frontend, backend, hasta soluciones completas multiplataforma.
+                These are some of the technologies I have worked with, ranging from frontend and backend development to complete multiplatform solutions.
             </p>
             <a href="{{ url_for('main.projects')}}" class="btn btn-danger mt-3">Saber más</a>
         </div>
@@ -131,7 +175,7 @@
                             <p class="mt-2 text-light fw-bold">Python</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Multipurpose language ideal for backend, data processing and automation logic.</p>
                         </div>
                     </div>
                 </div>
@@ -146,7 +190,7 @@
                             <p class="mt-2 text-light fw-bold">C#</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Object-oriented language used for enterprise-grade applications and desktop/web systems.</p>
                         </div>
                     </div>
                 </div>
@@ -160,7 +204,7 @@
                             <p class="mt-2 text-light fw-bold">.NET Core</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Cross-platform framework for building high-performance web APIs and applications.</p>
                         </div>
                     </div>
                 </div>
@@ -175,7 +219,7 @@
                             <p class="mt-2 text-light fw-bold">JS</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Core scripting language for dynamic web interfaces and full stack development.</p>
                         </div>
                     </div>
                 </div>
@@ -196,7 +240,7 @@
                             <p class="mt-2 text-light fw-bold">Java</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Robust, secure and scalable language used in enterprise systems and Android development.</p>
                         </div>
                     </div>
                 </div>
@@ -216,7 +260,7 @@
                             <p class="mt-2 text-light fw-bold">HTML5</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Markup language that structures and displays content across all modern browsers.</p>
                         </div>
                     </div>
                 </div>
@@ -231,7 +275,7 @@
                             <p class="mt-2 text-light fw-bold">CSS</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text"> Styling language that defines layouts, animations, and responsive visual design.</p>
                         </div>
                     </div>
                 </div>
@@ -246,7 +290,7 @@
                             <p class="mt-2 text-light fw-bold">Flask</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text"> Lightweight web framework for Python focused on flexibility and microservices.</p>
                         </div>
                     </div>
                 </div>
@@ -260,7 +304,7 @@
                             <p class="mt-2 text-light fw-bold">Django</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">High-level Python framework that accelerates backend development with built-in features.</p>
                         </div>
                     </div>
                 </div>
@@ -274,7 +318,7 @@
                             <p class="mt-2 text-light fw-bold">API Rest</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Architectural style to structure and expose services through clean, scalable interfaces.</p>
                         </div>
                     </div>
                 </div>
@@ -298,7 +342,7 @@
             <!-- Repeat similar structure for other skill cards -->
             
                 <!-- card 12 -->   
-                <div class="skill-card">
+                <!-- <div class="skill-card">
                     <div class="card-inner">
                         <div class="card-front d-flex flex-column align-items-center justify-content-center">
                             <?xml version="1.0" encoding="UTF-8"?>
@@ -316,7 +360,7 @@
                             <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             <!-- Repeat similar structure for other skill cards -->
             
                 <!-- card 13 -->   
@@ -349,7 +393,7 @@
                             <p class="mt-2 text-light fw-bold">MySQL</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Relational database engine known for its speed, reliability, and integration with web frameworks like Django and Laravel.</p>
                         </div>
                     </div>
                 </div>
@@ -364,7 +408,7 @@
                             <p class="mt-2 text-light fw-bold">SQL Server</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Enterprise-grade database system by Microsoft, ideal for handling complex queries, transactions and reporting.</p>
                         </div>
                     </div>
                 </div>
@@ -378,7 +422,7 @@
                             <p class="mt-2 text-light fw-bold">PostgreSQL</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text"> Advanced open-source relational database with strong support for performance, extensibility, and complex data types.</p>
                         </div>
                     </div>
                 </div>
@@ -392,7 +436,7 @@
                             <p class="mt-2 text-light fw-bold">Firebase</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Backend-as-a-Service (BaaS) by Google offering real-time database, auth, and cloud functions for scalable app development.</p>
                         </div>
                     </div>
                 </div>
@@ -409,7 +453,7 @@
                             <p class="mt-2 text-light fw-bold">Docker</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Containerization platform that packages code and dependencies into isolated environments for consistent deployment.</p>
                         </div>
                     </div>
                 </div>
@@ -423,7 +467,7 @@
                             <p class="mt-2 text-light fw-bold">AWS</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Leading cloud platform offering compute, storage, and scalable services for high-availability applications.</p>
                         </div>
                     </div>
                 </div>
@@ -437,7 +481,7 @@
                             <p class="mt-2 text-light fw-bold">Github</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text"> Collaborative platform for version control, CI/CD pipelines, and open-source project management.</p>
                         </div>
                     </div>
                 </div>
@@ -451,7 +495,7 @@
                             <p class="mt-2 text-light fw-bold">Pwr Aut</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Microsoft tool for automating repetitive tasks and workflows across apps and services without manual effort.</p>
                         </div>
                     </div>
                 </div>
@@ -493,7 +537,7 @@
                             <p class="mt-2 text-light fw-bold">Jira</p>
                         </div>
                         <div class="card-back d-flex align-items-center justify-content-center text-light">
-                            <p class="text-center px-2 tamaño-text">Lenguaje versátil para desarrollo backend y automatización.</p>
+                            <p class="text-center px-2 tamaño-text">Project management tool by Atlassian designed for agile development, issue tracking, sprint planning, and team collaboration.</p>
                         </div>
                     </div>
                 </div>
