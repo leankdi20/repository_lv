@@ -173,7 +173,8 @@
 </style>
 
 
-<div class="hero-section text-center text-light position-relative" style="background-color: rgba(0, 0, 0, 0.5); padding: 3rem; border-radius: 10px;">
+<div class="hero-section text-center text-light position-relative" style="background-color: rgba(0, 0, 0, 0.8); padding: 3rem; border-radius: 10px;">
+    
     <!-- Enlaces para redes sociales -->
     <div class="redes-epicas">
         <a href="https://github.com/leankdi20" target="_blank" class="icono-epico github">
@@ -212,9 +213,17 @@
     </p>
 
     <div class="mt-5">
-        <a href="{{ url_for('main.projects')}}" class="btn btn-epico me-3"><span>Show Projects</span></a>
+        <a href="{{ url_for('main.projects')}}" 
+            class="btn btn-epico me-3 epic-sound" 
+            data-sound="/static/audio/wololo.mp3">
+            <span>Show Projects</span>
+        </a>
 
-        <a href="{{ url_for('main.contact')}}" class="btn btn-epico me-3"><span>Contact</span></a>
+        <a href="{{ url_for('main.contact')}}" 
+            class="btn btn-epico me-3 epic-sound2"
+            data-sound="/static/audio/sonidos_varios.mp3">
+            <span>Contact</span>
+        </a>
         
     
     </div>
@@ -231,4 +240,50 @@
         I architect digital strongholds with precision—each line of code is designed to optimize performance, reinforce systems, and empower users. My mission: turn complexity into clarity through clean, strategic engineering.
     </p>
 </div>
+
+
+
+<script>
+document.querySelectorAll(".epic-sound").forEach(btn => {
+    btn.addEventListener("click", function (e) {
+        e.preventDefault(); // evita que se vaya directo
+        const url = this.href; 
+        const sound = new Audio(this.dataset.sound);
+
+        sound.play();
+
+        // esperar 6 segundos antes de redirigir
+        setTimeout(() => {
+            window.location.href = url;
+        }, 7000);
+    });
+});
+
+
+document.querySelectorAll(".epic-sound2").forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault(); // evita la navegación inmediata
+
+    const url = this.href;
+    const sound = new Audio(this.dataset.sound);
+
+    // Aseguramos que el audio ya cargó para poder saltar al segundo 52
+    sound.addEventListener("loadedmetadata", () => {
+      sound.currentTime = 52;   // iniciar en el segundo 52
+      sound.play().catch(err => console.log("Autoplay bloqueado:", err));
+    });
+
+    // Parar al llegar al 55 y redirigir
+    sound.addEventListener("timeupdate", () => {
+      if (sound.currentTime >= 55) {
+        sound.pause();
+        sound.currentTime = 0; // opcional: resetear
+        window.location.href = url; // redirigir
+      }
+    });
+  });
+});
+
+
+</script>
 {% endblock %}
