@@ -160,8 +160,8 @@
 
 .carousel-container {
   overflow: hidden;
-  width: 100%;
-  max-width: 90vw;
+  width: 110%;
+  
   display: flex;
   justify-content: center;
 }
@@ -553,6 +553,37 @@
     <button class="carousel-btn left" onclick="moveCarousel(-1)">⬅️</button>
     <div class="carousel-container">
         <div class="carousel-track" id="carouselTrack">
+
+            <!-- Tarjeta 0: TuCita -->
+            <div class="flip-card">
+            <div class="aoe-card">
+                <div class="aoe-card-header">
+                <img src="{{ url_for('static', filename='img/arquero_icon.png')}}" alt="Proyecto ícono" class="aoe-icon">
+                <div class="aoe-title-wrap">
+                    <h3>TuCita</h3>
+                    <span class="tag">⚕️ Healthcare Dashboard</span>
+                </div>
+                </div>
+
+                <p class="aoe-desc">
+                Web app for healthcare professionals to manage patients, appointments and records with an integrated dashboard.
+                </p>
+
+                <!-- Miniatura YouTube -->
+                <a href="https://www.youtube.com/watch?v=a4qdWR9fCpI" target="_blank" rel="noopener">
+                <img src="https://img.youtube.com/vi/a4qdWR9fCpI/0.jpg" alt="TuCita demo" class="demo-img">
+                </a>
+
+                <div class="aoe-tools">
+                <span>⚛️ React + Vite</span>
+                <span>🛠️ Django REST</span>
+                <span>🛢️ MySQL</span>
+                <span>🎨 Bootstrap</span>
+                </div>
+
+                <a href="https://github.com/leankdi20/TuCita" class="aoe-btn" target="_blank" rel="noopener">Ver en GitHub ⚔️</a>
+            </div>
+            </div>
     
             <!-- Tarjeta 1 -->
             <div class="flip-card">
@@ -690,7 +721,13 @@
         <div class="aoe-col"><h6>IV Capture</h6></div>
     </div>
 
-        <!-- Fila 6 -->
+   
+
+ 
+   
+
+ 
+    <!-- Fila 1 -->
     <div class="aoe-table-row">
         <div class="aoe-col project-cell">
             <button class="toggle-btn" onclick="toggleRow(this)">▶️</button>
@@ -727,8 +764,7 @@
             </div>  
         </div>
         <div class="aoe-col collapsible"><p>Web app for healthcare professionals to manage patients, appointments, and medical records with an integrated dashboard.</p></div>
-        <div class="aoe-col collapsible">
-        <div class="video-thumbnail">
+        <div class="aoe-col collapsible video-thumbnail">
             <a href="https://www.youtube.com/watch?v=a4qdWR9fCpI" target="_blank">
                 <img class="aoe-preview"
                     src="https://img.youtube.com/vi/a4qdWR9fCpI/0.jpg"
@@ -736,10 +772,6 @@
             </a>
             <a href="https://github.com/leankdi20/TuCita" target="_blank" class="aoe-link">GitHub ⚔️</a>
         </div>
-    </div>
-
-            
-        
     </div>
 
     <!-- Fila 1 -->
